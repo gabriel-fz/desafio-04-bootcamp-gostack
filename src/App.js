@@ -1,8 +1,10 @@
 import React from "react";
 import "./App.css";
 
+import profile from "./assets/foto-uenf.png";
+
 function App() {
-  return <h1>Hello Fiorese</h1>;
+  return <img width="200" src={profile} />;
 }
 
 export default App;
