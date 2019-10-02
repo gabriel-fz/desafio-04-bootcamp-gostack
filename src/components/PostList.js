@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Post from "./Post";
 
 class PostList extends Component {
   state = {
@@ -100,30 +101,7 @@ class PostList extends Component {
     return (
       <div className="postlist">
         {this.state.posts.map(post => (
-          <div className="post">
-            <div key={post.id}>
-              <div className="post-header">
-                <img className="avatar" src={post.author.avatar} />
-                <div className="details">
-                  <span>{post.author.name}</span>
-                  <span>{post.date}</span>
-                </div>
-              </div>
-            </div>
-            <p className="post-content">{post.content}</p>
-            <div className="post-comments">
-              <div className="divider" />
-              {post.comments.map(comment => (
-                <div key={comment.id} className="comment">
-                  <img className="avatar" src={comment.author.avatar} />
-                  <p>
-                    <span>{comment.author.name}</span>
-                    {comment.content}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <Post key={post.id} post={post} />
         ))}
       </div>
     );
